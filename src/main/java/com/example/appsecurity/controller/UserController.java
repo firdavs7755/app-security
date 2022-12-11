@@ -46,7 +46,7 @@ public class UserController {
         } else {
             User u = new User(
                     reqUser.getFill_name(),
-                    reqUser.getPassword(),
+                    encoder.encode(reqUser.getPassword()),
                     reqUser.getEmail(),
                     reqUser.getUsername(),
                     roleRepositiory.findAllByRole(RoleNames.ROLE_USER  )
